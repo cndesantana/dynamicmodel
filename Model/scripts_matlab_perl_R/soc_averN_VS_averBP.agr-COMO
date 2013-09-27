@@ -1,0 +1,1 @@
+cat Aver_SOC_Params_sp*.dat | perl -ane 'print "$F[4] $F[7]\n"' |xmgrace -free -pipe

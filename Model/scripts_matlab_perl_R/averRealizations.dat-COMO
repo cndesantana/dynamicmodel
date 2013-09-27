@@ -1,0 +1,1 @@
+./averRealizations.pl AverIndInTime_seed_*.dat > averRealizations.dat

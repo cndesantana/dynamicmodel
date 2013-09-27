@@ -1,0 +1,1 @@
+./spaceDistr.pl 100 output_species_011_seed_1007_real_1_changes_0.dat output_species_012_seed_1007_real_1_changes_0.dat output_species_013_seed_1007_real_1_changes_0.dat |xmgrace -pipe -free

@@ -1,0 +1,298 @@
+% Template for PLoS
+% Version 1.0 January 2009
+%
+% To compile to pdf, run:
+% latex plos.template
+% bibtex plos.template
+% latex plos.template
+% latex plos.template
+% dvipdf plos.template
+
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{animate}
+\usetikzlibrary{arrows,shapes}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+
+% Use doublespacing - comment out for single spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+
+% Use the PLoS provided bibtex style
+\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+%% END MACROS SECTION
+
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large
+\textbf{Self-organized predation and migration model}
+}
+%% Insert Author names, affiliations and corresponding author email.
+%\\
+%Charles Novaes de Santana$^{1,2,\ast}$ 
+%\\
+%\bf{1} Author1 Dept/Program/Center, Institution Name, City, State, Country
+%\\
+%\bf{2} Author2 Dept/Program/Center, Institution Name, City, State, Country
+%\\
+%\bf{3} Author3 Dept/Program/Center, Institution Name, City, State, Country
+%\\
+%\bf{4} Author3 Dept/Program/Center, Institution Name, City, State, Country
+%\\
+%\bf{5} Author3 Dept/Program/Center, Institution Name, City, State, Country
+%\\
+%$\ast$ E-mail: charles.desantana@eawag.ch 
+\end{flushleft}
+
+% Please keep the abstract between 250 and 300 words
+\section*{Abstract}
+
+\cite{desantana2013topological}
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLoS ONE authors please skip this step. 
+% Author Summary not valid for PLoS ONE submissions.   
+\section*{Author Summary}
+
+\section*{Introduction}
+
+% Results and Discussion can be combined.
+\section*{Results}
+
+\vspace{0.25cm}
+\subsection*{Steady State}
+
+\vspace{0.25cm}
+\subsection*{Space of Parameters}
+
+\vspace{0.25cm}
+\subsection*{Metabolic Theory of Ecology}
+
+\section*{Discussion}
+
+% You may title this section "Methods" or "Models". 
+% "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
+% authors may use "Analysis" 
+\section*{Materials and Methods}
+
+\vspace{0.25cm}
+\subsection*{Fluxogram of the model}
+
+Please see Figure \ref{fig:Fluxogram}
+
+\vspace{0.25cm}
+\subsection*{Predation Equations}
+
+\vspace{0.25cm}
+\begin{itemize}
+\item \textbf{General Equation}
+\end{itemize}
+
+\begin{align*}
+ N^\prime\left(sp\right) & = N\left(sp\right) \times \left\{ \tikz[baseline]{\node[fill=blue!20,anchor=base] (t1) { $\left[ 1 - NDp\left(sp\right) \right]\left[ \sum_{b \in H\left(sp\right)}\rho\left(b\right)Dp\left(b\right) \right]\left[Bp\left(sp\right)\right]$ };}  \right.\nonumber  \\
+ &\qquad \left. \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$- \left[\sum_{c \in P\left(sp\right)}\rho\left(c\right)\left( 1-NDp \left(c \right) \right)\frac{\rho\left(sp\right)}{\sum_{d \in H\left(c\right)}\rho\left(d\right)}Dp\left(sp\right)\right]-\left[NDp\left(sp\right)\right]$ };} \right\} 
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% B I R T H      P R O B A B I L I T Y
+%%%%%%%%%%%%%%%%%%
+\vspace{1cm}
+\begin{itemize}
+\item \textbf{Self-Organized Parameters: Birth Probability}
+\end{itemize}
+
+\begin{align*}
+Bp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[1 - \rho\left(sp\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\rho\left(b\right)\left(1-\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\
+& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(sp\right)}\rho\left(c\right) \right]$};}
+\end{align*}
+
+\textbf{Where:} Availability of Resources of Basal Species is 1.0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% D E A T H     P R O B A B I L I T Y
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{1cm}
+\begin{itemize}
+\item \textbf{Self-Organized Parameters: Death Probability}
+\end{itemize}
+
+\begin{align*}
+Dp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[\rho\left(sp\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\left(1-\rho\left(b\right)\right)\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\ 
+& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(sp\right)}\rho\left(c\right) \right]$};} 
+\end{align*}
+
+\textbf{Where:} Death Probability of Basal Species is 1.0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% N A T U R A L     D E A T H     P R O B A B I L I T Y
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{1cm}
+\begin{itemize}
+\item \textbf{Self-Organized Parameters: Natural Death Probability}
+\end{itemize}
+
+\begin{align*}
+NDp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[\rho\left(sp\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\left(1-\rho\left(b\right)\right)\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\ 
+& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(sp\right)}\rho\left(c\right) \right]$};} 
+\end{align*}
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% S P E C I E S     C A R R Y I N G     C A P A C I T Y
+%%%%%%%%%%%%%%%%
+\vspace{1cm}
+\begin{itemize}
+\item \textbf{Self-Organized Parameters: Carrying Capacity (for each species in each site)}
+\end{itemize}
+
+\begin{align*}
+CC\left(sp\right) & =  \tikz[baseline]{\node[fill=red!20,ellipse,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\frac{\left(\rho\left(b\right)\right)}{\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)}\right]$};}
+\end{align*}
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% M O B I L I T Y 
+%%%%%%%%%%%%%%%% 
+
+\vspace{0.25cm}
+\subsection*{Migration Equations}
+
+%%%%%%\begin{frame}
+%%%%%%\frametitle{Mobility Dynamics}
+%%%%%%%\includegraphics[width=1.0\textwidth]{./mobility.eps}
+%%%%%%\end{frame}
+%%%%%%
+
+\vspace{1cm}
+\begin{itemize}
+    \item \textbf{Mobility of species \emph{sp} from site \emph{i} to \emph{j}} 
+\end{itemize}
+
+$\Delta N_{sp}\left(i\right) = \sum_{j \in Neigh\left(i\right)} \left( \left( N_{sp}(j) \; M_{sp}(j,i) \; - \; \tikz[baseline]{\node[fill=blue!20,anchor=base] (t1) {$N_{sp}(i) $};} \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$M_{sp}(i,j)$};} \right) \right)$
+
+
+\vspace{0.25cm}
+\small{$M(i,j) = \overbrace{ \left[ \lambda^{i} \frac{ \Delta_{ij}\,f\,\Theta \left(\Delta_{ij}\,f\,\right) }{ \sum_{k \in Neigh\left(i\right)}\Delta_{ik}\,f\,\Theta \left(\Delta_{ik}\,f\,\right) }\right]}^{Biotic} \overbrace{\left[w_{ij} \frac{ \Delta_{ij}\,f_{\eta}\,\Theta \left(\Delta_{ij}\,f_{\eta}\,\right) }{ \sum_{k \in Neigh\left(i\right)}\Delta_{ik}\,f_{\eta}\,\Theta \left(\Delta_{ik}\,f_{\eta}\,\right) }\right]}^{Abiotic}$}
+
+\vspace{0.5cm}
+$$
+\Delta_{ij}\,f = f^{i,j} - f^{j,i}\left\{ \begin{array}{rl}
+ f^{i,j} = \rho_{H}(j) + \rho_{P}(i) \\
+ f^{j,i} = \rho_{H}(i) + \rho_{P}(j) \\
+       \end{array} \right.
+$$
+
+\vspace{0.5cm}
+\centering $\lambda^{i} = \frac{1}{2} \left( 1 - RE^{i} \right)$ \\
+
+\vspace{0.25cm}
+\centering $ RE^{i} = \frac{ New^{t} }{ N^{t} }$
+
+\vspace{0.25cm}
+$$
+ \Delta_{ij}\,f_{\eta} = f_{\eta}^{j} - f_{\eta}^{i} \left\{ \begin{array}{rl}
+ f_{\eta}^{i} = \eta_{sp}^{*} - \eta_{sp}^{i} \\
+ f_{\eta}^{j} = \eta_{sp}^{*} - \eta_{sp}^{i} \\
+       \end{array} \right.
+$$
+
+\vspace{0.25cm}
+$$w_{ij} = Connectivity \: between \: sites \: i and \: j$$
+
+%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{1cm}
+% Do NOT remove this, even if you are not including acknowledgments
+\section*{Acknowledgments}
+
+
+%\section*{References}
+% The bibtex filename
+\bibliography{references}
+
+\vspace{1cm}
+\section*{Figures}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=4in]{./figures/Fluxogram.eps}
+\end{center}
+\caption{
+{\bf Fluxogram.} Fluxogram of the model.
+}
+\label{fig:Fluxogram}
+\end{figure}
+
+%\begin{figure}[!ht]
+%\begin{center}
+%%\includegraphics[width=4in]{figure_name.2.eps}
+%\end{center}
+%\caption{
+%{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+%should be left justified, as specified by the options to the caption 
+%package.
+%}
+%\label{Figure_label}
+%\end{figure}
+
+\vspace{1cm}
+\section*{Tables}
+%\begin{table}[!ht]
+%\caption{
+%\bf{Table title}}
+%\begin{tabular}{|c|c|c|}
+%table information
+%\end{tabular}
+%\begin{flushleft}Table caption
+%\end{flushleft}
+%\label{tab:label}
+% \end{table}
+
+\end{document}
+
