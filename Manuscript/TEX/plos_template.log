@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2013.9.16)  27 SEP 2013 12:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2013.9.16)  2 OCT 2013 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,43 +538,46 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+ (./introduction.tex) (./results.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 110.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 135.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 135.
-LaTeX Font Info:    Try loading font information for U+msa on input line 138.
+(./discussion.tex) (./materialmethods.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 138.
+LaTeX Font Info:    Try loading font information for U+msb on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 213.
- [2]
-(./plos_template.bbl)
-File: ./figures/Fluxogram.eps Graphic file (type eps)
- <./figures/Fluxogram.eps> [3] [4] (./plos_template.aux) ) 
-Here is how much of TeX's memory you used:
- 13500 strings out of 495032
- 268626 string characters out of 6181557
- 375385 words of memory out of 5000000
- 16439 multiletter control sequences out of 15000+600000
- 13088 words of font info for 43 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 56i,16n,56p,467b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 25.
 
-Output written on plos_template.dvi (4 pages, 22700 bytes).
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
+ [2]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 103.
+)
+(./plos_template.bbl [3])
+File: ./figures/Fluxogram.eps Graphic file (type eps)
+ <./figures/Fluxogram.eps> [4] (./plos_template.aux) ) 
+Here is how much of TeX's memory you used:
+ 13522 strings out of 495032
+ 268960 string characters out of 6181557
+ 373385 words of memory out of 5000000
+ 16445 multiletter control sequences out of 15000+600000
+ 13636 words of font info for 44 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 56i,16n,56p,967b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on plos_template.dvi (4 pages, 27240 bytes).

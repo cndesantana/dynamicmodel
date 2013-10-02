@@ -19,4 +19,22 @@ de~Santana CN, Rozenfeld AF, Marquet PA, Duarte CM (2013) Topological
 \newblock Marine ecology Progress series 474: 15--26.
 \bibAnnoteFile{desantana2013topological}
 
+\bibitem{dunne2005modeling}
+Dunne JA, Brose U, Williams RJ, Martinez ND (2005) Modeling food-web dynamics:
+  complexity-stability implications.
+\newblock Aquatic food webs: an ecosystem approach : 117.
+\bibAnnoteFile{dunne2005modeling}
+
+\bibitem{jordan2012simulating}
+Jord{\'a}n F, Gjata N, Mei S, Yule CM (2012) Simulating food web dynamics along
+  a gradient: Quantifying human influence.
+\newblock PloS one 7: e40280.
+\bibAnnoteFile{jordan2012simulating}
+
+\bibitem{levin1981representation}
+Levin B (1981) A representation for multinomial cumulative distribution
+  functions.
+\newblock The Annals of Statistics 9: 1123--1126.
+\bibAnnoteFile{levin1981representation}
+
 \end{thebibliography}
