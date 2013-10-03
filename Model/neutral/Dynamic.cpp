@@ -751,7 +751,7 @@ void Dynamic::Migration(int cont)
 			realMigration =0;
 			if (sum != 0 && this->_Sites.at(ix_St1).get_Nold(ix_Sp1) )//if there are inds of the species 'Sp1' alive at site 'St1' and there are preffered sites			
 			{
-				nNeigh = this->_Sites.at(ix_St1).get_NumberNeigh();
+				nNeigh = this->_Sites.at(ix_St1).get_NumberNeigh();//number of neighbor sites
 				for (k=0;k<nNeigh;k++)//number_mig is the number of migrations for species 'ix_Sp1', from site 'ix_St1' to site 'ix_TargetSt'.
 				{
 					auxNeigh = this->_Sites.at(ix_St1).get_NeighborhoodData(k);
@@ -823,7 +823,6 @@ int Dynamic::calc_SumN(int st, int sp)
 		ccSpAtTarget=this->SOC_CC(sp,ix_TargetSt);
 		totIndsSpAtTarget=this->_Sites.at(st).get_NumberIndSpecies(sp);
 		
-// 		if (pop < this->_Sites.at(st).get_CarryingCapacity())//at least one site has vacancy
 		if( totIndsSpAtTarget < ccSpAtTarget)  //ALE
 		{
 			if((this->mc_timestep>=it_beg)&&(this->mc_timestep<=it_end)) cout << "OK! WE HAVE VACANCY!" << endl;	
