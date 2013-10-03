@@ -1,2 +1,0 @@
-matlab -nodesktop -r 'N_miguel; exit'
-#matlab -nodesktop -r '[exps, m]=NvsBP; for seed=[1:10],  for site=[1:10],graficar(m,seed,site); pause; end; end'

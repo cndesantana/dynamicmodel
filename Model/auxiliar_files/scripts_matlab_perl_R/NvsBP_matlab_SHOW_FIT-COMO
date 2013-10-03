@@ -1,0 +1,2 @@
+/usr/local/MATLAB/R2011b/bin/matlab -nodesktop -r "[exps, m]=NvsBP;hist(exps,[min(exps):0.2:max(exps)]);set(gca,'xlim',[0 5])" 
+#matlab -nodesktop -r '[exps, m]=NvsBP; hist(exps,[min(exps):0.25:max(exps)]);figure;for seed=[1:10],  for site=[1:10],graficar(m,seed,site); pause; end; end'

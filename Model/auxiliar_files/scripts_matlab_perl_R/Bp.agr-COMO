@@ -1,0 +1,2 @@
+#cat erro | grep ALE | perl -ane 'print "$F[2]\n"' |tail -1000000 |xmgrace -pipe -free -log xy
+cat erro |grep ALE| perl -ane 'print "$F[2]\n"' |tail -1000000 | sort -nr |xmgrace -pipe -free -log xy

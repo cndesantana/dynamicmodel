@@ -1,0 +1,1 @@
+./MeanField_Params.pl fwf.net AverNumOfInds_t1000.dat| xmgrace -pipe -free

@@ -18,17 +18,16 @@ At each time of the MC simulation we leave all the individuals of each patch $i$
 If $k$ individual is not a predator (if it is a basal species) the model assumes it has infinity food suply and the only possible behaviors are 1. and 2.. For each MC time-step $mc$, this simulation is repeated for all individuals of each patch of the landscape. The births will occur only if there is free space in the patch $i$, that means, if the number of individuals alive at $i$ is lower than its carrying capacity ($cc$). For each time $t$ in which one individual of species $k$ gives an offspring in a patch $i$, its number of individuals in this patch will be increased by 1; for each time $t$ in which one individual of species $k$ dies naturally or by predation in a patch $i$, its number of individuals will be decreased by 1. In Figure \ref{fig:Fluxogram} we show a fluxogram that summarizes the running of the predation dynamic of the model. 
 
 \vspace{0.25cm}
-\subsection*{Predation Equations}
+\subsubsection{Predation Equations}
 
 \vspace{0.25cm}
 \begin{itemize}
 \item \textbf{General Equation}
 \end{itemize}
 
-\begin{align*}
- N^\prime\left(sp\right) & = N\left(sp\right) \times \left\{ \tikz[baseline]{\node[fill=blue!20,anchor=base] (t1) { $\left[ 1 - NDp\left(sp\right) \right]\left[ \sum_{b \in H\left(sp\right)}\rho\left(b\right)Dp\left(b\right) \right]\left[Bp\left(sp\right)\right]$ };}  \right.\nonumber  \\
- &\qquad \left. \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$- \left[\sum_{c \in P\left(sp\right)}\rho\left(c\right)\left( 1-NDp \left(c \right) \right)\frac{\rho\left(sp\right)}{\sum_{d \in H\left(c\right)}\rho\left(d\right)}Dp\left(sp\right)\right]-\left[NDp\left(sp\right)\right]$ };} \right\} 
-\end{align*}
+\begin{equation}
+ \left\{\left[ 1 - NDp\left(k\right) \right]\left[ \sum_{b \in H\left(k\right)}\rho\left(b\right)Dp\left(b\right) \right]\left[Bp\left(k\right)\right] - \left[\sum_{c \in P\left(k\right)}\rho\left(c\right)\left( 1-NDp \left(c \right) \right)\frac{\rho\left(k\right)}{\sum_{d \in H\left(c\right)}\rho\left(d\right)}Dp\left(k\right)\right] - \left[NDp\left(k\right)\right] \right\} 
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%% B I R T H      P R O B A B I L I T Y
@@ -39,8 +38,8 @@ If $k$ individual is not a predator (if it is a basal species) the model assumes
 \end{itemize}
 
 \begin{align*}
-Bp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[1 - \rho\left(sp\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\rho\left(b\right)\left(1-\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\
-& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(sp\right)}\rho\left(c\right) \right]$};}
+Bp\left(k\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[1 - \rho\left(k\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(k\right)}\rho\left(b\right)\left(1-\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\
+& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(k\right)}\rho\left(c\right) \right]$};}
 \end{align*}
 
 \textbf{Where:} Availability of Resources of Basal Species is 1.0
@@ -54,8 +53,8 @@ Bp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t
 \end{itemize}
 
 \begin{align*}
-Dp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[\rho\left(sp\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\left(1-\rho\left(b\right)\right)\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\ 
-& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(sp\right)}\rho\left(c\right) \right]$};} 
+Dp\left(k\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[\rho\left(k\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(k\right)}\left(1-\rho\left(b\right)\right)\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\ 
+& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(k\right)}\rho\left(c\right) \right]$};} 
 \end{align*}
 
 \textbf{Where:} Death Probability of Basal Species is 1.0
@@ -69,8 +68,8 @@ Dp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t
 \end{itemize}
 
 \begin{align*}
-NDp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[\rho\left(sp\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\left(1-\rho\left(b\right)\right)\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\ 
-& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(sp\right)}\rho\left(c\right) \right]$};} 
+NDp\left(k\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (t1) {$\left[\rho\left(k\right)\right]$};} \times \tikz[baseline]{\node[fill=red!20,anchor=base] (t2) {$\left[\sum_{b \in H\left(k\right)}\left(1-\rho\left(b\right)\right)\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)\right]$};} \\ 
+& \times \tikz[baseline]{\node[fill=green!20,anchor=base] (t3) {$\left[1-\sum_{c \in P\left(k\right)}\rho\left(c\right) \right]$};} 
 \end{align*}
 
 %%%%%%%%%%%%%%%%
@@ -82,15 +81,19 @@ NDp\left(sp\right) & = \tikz[baseline]{\node[fill=blue!20,ellipse,anchor=base] (
 \end{itemize}
 
 \begin{align*}
-CC\left(sp\right) & =  \tikz[baseline]{\node[fill=red!20,ellipse,anchor=base] (t2) {$\left[\sum_{b \in H\left(sp\right)}\frac{\left(\rho\left(b\right)\right)}{\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)}\right]$};}
+CC\left(k\right) & =  \tikz[baseline]{\node[fill=red!20,ellipse,anchor=base] (t2) {$\left[\sum_{b \in H\left(k\right)}\frac{\left(\rho\left(b\right)\right)}{\left(\sum_{c \in P\left(b\right)}\rho\left(c\right)\right)}\right]$};}
 \end{align*}
 
 %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% M O B I L I T Y 
 %%%%%%%%%%%%%%%% 
 
+\subsection{Dispersal Migration}
+
+The model allows the Dispersal Migration of individuals living in any patche $i$ to each patch in its neighborhood. The $i$-neighborhood is given by the topology of the neighborhood network, here we consider a neighborhood defined by a regular 2-dimensional toroidal lattice. Is assumed that, for each time step, each species in the landscape has a level of preference to each patch. The preference of a species $k$ for a patch $i$ in time $t$ ($Pref_{i}^k(t)$) is defined as the difference between the number of individuals of species that are prey and species that are predators of $k$ in that patch. The migration of a species $k$ from a patch $i$ to a neighborhood patch $j$ will occur only if  $Pref_{j}^k(t) > Pref_{i}^k(t)$. The number of individuals of species $k$ that move from $i$ to $j$ must respect the threshold imposed by the carrying capacity of the target patch ($cc_j^k(t)$) and is defined as seen below:
+
 \vspace{0.25cm}
-\subsection*{Migration Equations}
+\subsubsection{Migration Equations}
 
 %%%%%%\begin{frame}
 %%%%%%\frametitle{Mobility Dynamics}

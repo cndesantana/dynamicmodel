@@ -1,0 +1,1 @@
+./soc_Params.pl SOC_Parameters_sp_001_seed_*_real_1.dat 2>Aver_SOC_Params_sp1.dat | xmgrace -free -pipe

@@ -1,0 +1,2 @@
+tail -1 averRealizations.dat |perl -ane 'shift(@F); map {print "$_\n"} @F' > AverNumOfInds_t1000.dat
+
