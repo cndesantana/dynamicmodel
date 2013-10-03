@@ -761,7 +761,8 @@ void Dynamic::Migration(int cont)
 					if (dif > 0)//just will do the migration IF the Pref from the neighbohood be greater than the local Pref
 					{
 						if((this->mc_timestep>=it_beg)&&(this->mc_timestep<=it_end)) cout << this->_Species.at(ix_Sp1).get_MigrationProbability() << " * " << this->_Sites.at(ix_St1).get_Nold(ix_Sp1) << " * " << dif << " / " << sum << " = ";
-						number_mig = (int) (this->_Species.at(ix_Sp1).get_MigrationProbability() * (this->_Sites.at(ix_St1).get_Nold(ix_Sp1) - realMigration) *  dif/sum);//number of individuals that will migrate to this site! ALE						
+//						number_mig = (int) (this->_Species.at(ix_Sp1).get_MigrationProbability() * (this->_Sites.at(ix_St1).get_Nold(ix_Sp1) - realMigration) *  dif/sum);//number of individuals that will migrate to this site! ALE						
+						number_mig = (int) (this->_Sites.at(ix_St1).get_Nold(ix_Sp1) - realMigration) * this->_Sites.at(ix_St1).get_Density(ix_Sp1);//neutral migration
 						if (number_mig > this->_Sites.at(ix_St1).get_Nold(ix_Sp1)) number_mig = this->_Sites.at(ix_St1).get_Nold(ix_Sp1); //ALE no puede migrar mas de lo que hay en el sitio...
 						if((this->mc_timestep>=it_beg)&&(this->mc_timestep<=it_end)) cout << number_mig << endl;
 						threshold_mig = this->SOC_CC(ix_Sp1,ix_TargetSt)-this->_Sites.at(ix_TargetSt).get_NumberIndSpecies(ix_Sp1);  //ALE
