@@ -747,7 +747,8 @@ void Dynamic::Migration(int cont)
 		{
 			ix_Sp1 = this->_Sites.at(ix_St1).get_SpeciesOrdered(j)-1;
 			if((this->mc_timestep>=it_beg)&&(this->mc_timestep<=it_end)) cout << "SPECIES SELECTED: " << ix_Sp1+1 << endl;
-			sum=this->calc_SumN(ix_St1,ix_Sp1);//to calculate de sum of the [ P_ix_St1(s)-Pj(s) ]*w_ix_St1-j : that means, the sum of the preferences of Sp1 for all neighbor of site St1 
+//			sum=this->calc_SumN(ix_St1,ix_Sp1);//to calculate de sum of the [ P_ix_St1(s)-Pj(s) ]*w_ix_St1-j : that means, the sum of the preferences of Sp1 for all neighbor of site St1 
+			sum=1;//species can migrate to any site, independently on its prefference for the sites
 			realMigration =0;
 			if (sum != 0 && this->_Sites.at(ix_St1).get_Nold(ix_Sp1) )//if there are inds of the species 'Sp1' alive at site 'St1' and there are preffered sites			
 			{
@@ -757,7 +758,8 @@ void Dynamic::Migration(int cont)
 					auxNeigh = this->_Sites.at(ix_St1).get_NeighborhoodData(k);
 					ix_TargetSt = auxNeigh.id-1;			
 					if((mc_timestep>=it_beg)&&(mc_timestep<=it_end)) cout << endl << "MIGRATION OF SPECIES_" << ix_Sp1+1 << " FROM SITE " << ix_St1+1 << " TO SITE " << ix_TargetSt+1 << ": " << endl;	
-					dif = ((this->_Sites.at(ix_TargetSt).get_Pref(ix_Sp1) - this->_Sites.at(ix_St1).get_Pref(ix_Sp1))*this->_Sites.at(ix_St1).get_NeighborhoodData(k).weight);
+//					dif = ((this->_Sites.at(ix_TargetSt).get_Pref(ix_Sp1) - this->_Sites.at(ix_St1).get_Pref(ix_Sp1))*this->_Sites.at(ix_St1).get_NeighborhoodData(k).weight);
+					dif = 1;//as it is a neutral version of the model, we allow species to migrate to any site, independently on its prefference for the sites
 					if (dif > 0)//just will do the migration IF the Pref from the neighbohood be greater than the local Pref
 					{
 						if((this->mc_timestep>=it_beg)&&(this->mc_timestep<=it_end)) cout << this->_Species.at(ix_Sp1).get_MigrationProbability() << " * " << this->_Sites.at(ix_St1).get_Nold(ix_Sp1) << " * " << dif << " / " << sum << " = ";
